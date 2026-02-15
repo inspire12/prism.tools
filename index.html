@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <!-- Copyright (c) 2025 BLGardner. All Rights Reserved. -->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prism.Tools - Developer Utilities</title>
-  <meta name="description" content="Prism.Tools: Standalone web tools for developers. Client-side Formatters, CSS, Security, and Generators. No-install, privacy-focused utilities.">
-  <meta name="keywords" content="json formatter, minify css js html, code formatter,secure password generator, hash generator, html encoder decoder, meta tag generator, lorem ipsum, base64 encoder decoder, url encoder, slug generator, diff checker">
+  <meta name="description"
+    content="Prism.Tools: Standalone web tools for developers. Client-side Formatters, CSS, Security, and Generators. No-install, privacy-focused utilities.">
+  <meta name="keywords"
+    content="json formatter, minify css js html, code formatter,secure password generator, hash generator, html encoder decoder, meta tag generator, lorem ipsum, base64 encoder decoder, url encoder, slug generator, diff checker">
   <meta name="author" content="BLGardner">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#FF79C6">
   <link rel="canonical" href="https://blgardner.github.io/prism.tools/">
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="Prism.Tools | Standalone Client-Side Developer Utilities">
-  <meta property="og:description" content="Prism.Tools: Standalone web tools for developers. Client-side Formatters, CSS, Security, and Generators. No-install, privacy-focused utilities.">
+  <meta property="og:description"
+    content="Prism.Tools: Standalone web tools for developers. Client-side Formatters, CSS, Security, and Generators. No-install, privacy-focused utilities.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prism.Tools | Standalone Client-Side Developer Utilities">
-  <meta name="twitter:description" content="Prism.Tools: Standalone web tools for developers. Client-side Formatters, CSS, Security, and Generators. No-install, privacy-focused utilities.">
-  
+  <meta name="twitter:description"
+    content="Prism.Tools: Standalone web tools for developers. Client-side Formatters, CSS, Security, and Generators. No-install, privacy-focused utilities.">
+
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #0a0a0f;
@@ -35,7 +44,7 @@
       line-height: 1.4;
       font-size: 14px;
     }
-    
+
     .navbar {
       position: sticky;
       top: 0;
@@ -47,9 +56,9 @@
       align-items: center;
       z-index: 1000;
       border-bottom: 1px solid #27272a;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
-    
+
     .logo {
       font-size: 1.25rem;
       font-weight: 700;
@@ -59,17 +68,17 @@
       cursor: pointer;
       letter-spacing: -0.5px;
     }
-    
+
     .nav-right {
       display: flex;
       gap: 1rem;
       align-items: center;
     }
-    
+
     .search-mini {
       position: relative;
     }
-    
+
     .search-mini input {
       width: 200px;
       padding: 0.4rem 0.75rem 0.4rem 2rem;
@@ -80,13 +89,13 @@
       font-size: 0.875rem;
       transition: all 0.2s;
     }
-    
+
     .search-mini input:focus {
       outline: none;
       border-color: #a78bfa;
       width: 280px;
     }
-    
+
     .search-icon {
       position: absolute;
       left: 0.6rem;
@@ -95,7 +104,7 @@
       color: #71717a;
       font-size: 0.875rem;
     }
-    
+
     .donate-btn {
       padding: 0.4rem 1rem;
       background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
@@ -107,15 +116,17 @@
       transition: transform 0.2s;
       white-space: nowrap;
     }
-    
-    .donate-btn:hover { transform: translateY(-1px); }
-    
+
+    .donate-btn:hover {
+      transform: translateY(-1px);
+    }
+
     .hero {
       padding: 2rem 1.5rem 1rem;
       text-align: center;
       background: linear-gradient(180deg, #0a0a0f 0%, #18181b 100%);
     }
-    
+
     .hero h1 {
       font-size: 2rem;
       font-weight: 800;
@@ -125,12 +136,12 @@
       -webkit-text-fill-color: transparent;
       letter-spacing: -1px;
     }
-    
+
     .hero p {
       color: #a1a1aa;
       font-size: 0.95rem;
     }
-    
+
     .privacy-badge {
       display: inline-flex;
       align-items: center;
@@ -144,7 +155,7 @@
       font-size: 0.8rem;
       margin-top: 0.75rem;
     }
-    
+
     .categories {
       max-width: 1400px;
       margin: 0 auto;
@@ -154,7 +165,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    
+
     .category-btn {
       padding: 0.5rem 1rem;
       background: rgba(167, 139, 250, 0.1);
@@ -167,18 +178,18 @@
       transition: all 0.2s;
       white-space: nowrap;
     }
-    
+
     .category-btn:hover {
       background: rgba(167, 139, 250, 0.2);
       transform: translateY(-1px);
     }
-    
+
     .category-btn.active {
       background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
       color: white;
       border-color: transparent;
     }
-    
+
     .main-layout {
       max-width: 1400px;
       margin: 0 auto;
@@ -187,11 +198,14 @@
       grid-template-columns: 1fr 250px;
       gap: 1.5rem;
     }
-    
+
     .tools-container {
       min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
-    
+
     .section-title {
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -200,13 +214,13 @@
       margin-bottom: 0.75rem;
       font-weight: 600;
     }
-    
+
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 0.625rem;
     }
-    
+
     .tool-card {
       background: #18181b;
       border: 1px solid #27272a;
@@ -220,7 +234,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .tool-card::before {
       content: '';
       position: absolute;
@@ -232,33 +246,33 @@
       transform: scaleX(0);
       transition: transform 0.2s;
     }
-    
+
     .tool-card:hover {
       transform: translateY(-2px);
       border-color: var(--tool-color);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
-    
+
     .tool-card:hover::before {
       transform: scaleX(1);
     }
-    
+
     .tool-card:hover .tool-actions {
       opacity: 1;
     }
-    
+
     .tool-header-mini {
       display: flex;
       align-items: center;
       gap: 0.4rem;
       margin-bottom: 0.3rem;
     }
-    
+
     .tool-icon {
       font-size: 1.1rem;
       line-height: 1;
     }
-    
+
     .tool-name {
       font-size: 0.8rem;
       font-weight: 700;
@@ -266,21 +280,23 @@
       line-height: 1.2;
       flex: 1;
     }
-    
+
     .tool-desc {
       color: #a1a1aa;
       font-size: 0.7rem;
       line-height: 1.3;
       margin-bottom: 0.4rem;
     }
-    
+
     .tool-actions {
       display: flex;
       gap: 0.25rem;
       opacity: 0;
       transition: opacity 0.2s;
+      margin-top: auto;
+      justify-content: space-between;
     }
-    
+
     .tool-action-btn {
       padding: 0.2rem 0.4rem;
       background: rgba(167, 139, 250, 0.1);
@@ -292,15 +308,15 @@
       transition: all 0.2s;
       font-weight: 600;
     }
-    
+
     .tool-action-btn:hover {
       background: rgba(167, 139, 250, 0.2);
     }
-    
+
     .sidebar {
       min-width: 0;
     }
-    
+
     .sidebar-section {
       background: #18181b;
       border: 1px solid #27272a;
@@ -308,7 +324,7 @@
       padding: 1rem;
       margin-bottom: 1rem;
     }
-    
+
     .sidebar-title {
       font-size: 0.8rem;
       font-weight: 600;
@@ -317,7 +333,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     .recent-tool {
       display: flex;
       align-items: center;
@@ -331,16 +347,16 @@
       transition: all 0.2s;
       text-decoration: none;
     }
-    
+
     .recent-tool:hover {
       border-color: #a78bfa;
       transform: translateX(2px);
     }
-    
+
     .recent-tool-icon {
       font-size: 1rem;
     }
-    
+
     .recent-tool-name {
       font-size: 0.75rem;
       color: #e4e4e7;
@@ -350,7 +366,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
+
     .stats-bar {
       background: #18181b;
       border: 1px solid #27272a;
@@ -360,18 +376,18 @@
       justify-content: space-around;
       gap: 1rem;
     }
-    
+
     .stat {
       text-align: center;
     }
-    
+
     .stat-value {
       font-size: 1.25rem;
       font-weight: 700;
       color: #a78bfa;
       line-height: 1;
     }
-    
+
     .stat-label {
       font-size: 0.65rem;
       color: #71717a;
@@ -379,7 +395,7 @@
       letter-spacing: 0.5px;
       margin-top: 0.25rem;
     }
-    
+
     .footer {
       text-align: center;
       padding: 2rem 1.5rem;
@@ -387,13 +403,13 @@
       border-top: 1px solid #27272a;
       margin-top: 3rem;
     }
-    
+
     .footer p {
       color: #71717a;
       font-size: 0.8rem;
       margin-bottom: 0.5rem;
     }
-    
+
     .footer-links {
       display: flex;
       gap: 1.5rem;
@@ -401,16 +417,18 @@
       flex-wrap: wrap;
       margin-top: 0.75rem;
     }
-    
+
     .footer-links a {
       color: #a78bfa;
       text-decoration: none;
       font-size: 0.85rem;
       transition: color 0.2s;
     }
-    
-    .footer-links a:hover { color: #ec4899; }
-    
+
+    .footer-links a:hover {
+      color: #ec4899;
+    }
+
     .toast {
       position: fixed;
       bottom: 2rem;
@@ -425,34 +443,71 @@
       animation: slideIn 0.3s ease-out;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
-    
+
     @keyframes slideIn {
-      from { transform: translateY(100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
-    
+
     @media (max-width: 1024px) {
       .main-layout {
         grid-template-columns: 1fr;
       }
+
       .sidebar {
         order: -1;
       }
+
       .sidebar-section {
         display: none;
       }
     }
-    
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 1.5rem; }
-      .tools-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-      .search-mini input { width: 150px; }
-      .search-mini input:focus { width: 200px; }
-      .categories { padding: 0.75rem; }
-      .main-layout { padding: 1rem; }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+
+      .search-mini input {
+        width: 150px;
+      }
+
+      .search-mini input:focus {
+        width: 200px;
+      }
+
+      .categories {
+        padding: 0.75rem;
+      }
+
+      .main-layout {
+        padding: 1rem;
+      }
+    }
+
+    .active-fav {
+      background: rgba(236, 72, 153, 0.2);
+      color: #ec4899;
+      border-color: rgba(236, 72, 153, 0.4);
+    }
+
+    .active-fav:hover {
+      background: rgba(236, 72, 153, 0.3);
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="logo" onclick="window.location.href='index.html'">PRISM.TOOLS</div>
@@ -481,9 +536,17 @@
   </div>
 
   <div class="main-layout">
+
+
     <div class="tools-container">
-      <div class="section-title" id="category-title">🛠️ All Tools</div>
-      <div id="tools" class="tools-grid"></div>
+      <div id="favorites-container" hidden>
+        <div class="section-title">⭐ Favorites</div>
+        <div id="favorites" class="tools-grid"></div>
+      </div>
+      <div>
+        <div class="section-title" id="category-title">🛠️ All Tools</div>
+        <div id="tools" class="tools-grid"></div>
+      </div>
     </div>
 
     <div class="sidebar">
@@ -512,16 +575,17 @@
       <a href="https://github.com/blgardner/prism.tools" target="_blank">GitHub</a>
       <a href="https://www.paypal.com/paypalme/BLGApps" target="_blank">☕ Donate</a>
       <a href="#" onclick="showSupporters(); return false;">💜 Supporters</a>
-	  <a href="./LICENSE.md" target="_blank">🪪 License</a>
+      <a href="./LICENSE.md" target="_blank">🪪 License</a>
     </div>
     <p style="font-size: 0.7rem; margin-top: 1rem; color: #555;">
-      Available on: <a href="https://blgardner.github.io/prism.tools/" target="_blank" style="color: #a78bfa;">GitHub Pages</a>
+      Available on: <a href="https://blgardner.github.io/prism.tools/" target="_blank" style="color: #a78bfa;">GitHub
+        Pages</a>
     </p>
   </footer>
 
   <script>
-      // { id: '', name: '', icon: '', description: '', color: '', file: '', category: '' },
-  
+    // { id: '', name: '', icon: '', description: '', color: '', file: '', category: '' },
+
     const tools = [
       // Formatters & Parsers
       { id: 'code-formatter', name: 'Code Formatter', icon: '📋', description: 'Format & beautify code', color: '#a78bfa', file: 'tools/code-formatter.html', category: 'formatters' },
@@ -530,8 +594,8 @@
       { id: 'yaml-json-converter', name: 'YAML ↔ JSON', icon: '🔄', description: 'Convert YAML & JSON', color: '#FFB86C', file: 'tools/yaml-json-converter.html', category: 'formatters' },
       { id: 'curl-to-fetch', name: 'CURL to Fetch', icon: '🔄', description: 'Convert CURL to JS', color: '#ec4899', file: 'tools/curl-to-fetch.html', category: 'formatters' },
       { id: 'svg-to-jsx', name: 'SVG to JSX', icon: '⚛️', description: 'Convert SVG to React JSX', color: '#22D3EE', file: 'tools/svg-to-jsx.html', category: 'formatters' },
-	  { id: 'json-to-typescript', name: 'JSON to TypeScript', icon: '📘', description: 'Generate TS interfaces from JSON', color: '#3178c6', file: 'tools/json-to-typescript.html', category: 'formatters' },
-	  
+      { id: 'json-to-typescript', name: 'JSON to TypeScript', icon: '📘', description: 'Generate TS interfaces from JSON', color: '#3178c6', file: 'tools/json-to-typescript.html', category: 'formatters' },
+
       // Security & Dev
       { id: 'jwt-decoder', name: 'JWT Decoder', icon: '🎫', description: 'Decode JWT tokens', color: '#6BCF7F', file: 'tools/jwt-decoder.html', category: 'security' },
       { id: 'password-generator', name: 'Password', icon: '🔐', description: 'Generate secure passwords', color: '#FF5555', file: 'tools/password-generator.html', category: 'security' },
@@ -539,7 +603,7 @@
       { id: 'uuid-generator', name: 'UUID Generator', icon: '🆔', description: 'Generate UUIDs v1/v4', color: '#82AAFF', file: 'tools/uuid-generator.html', category: 'security' },
       { id: 'subnet-calculator', name: 'Subnet Calculator', icon: '🌐', description: 'IP & network calculations', color: '#3b82f6', file: 'tools/subnet-calculator.html', category: 'security' },
       { id: 'http-status-codes', name: 'HTTP Status Codes', icon: '🌐', description: 'API status reference', color: '#0ea5e9', file: 'tools/http-status-codes.html', category: 'security' },
-	  { id: 'git-command-helper', name: 'Git Command Helper', icon: '🔀', description: 'Find the right Git commands', color: '#f43f5e', file: 'tools/git-command-helper.html', category: 'security' },
+      { id: 'git-command-helper', name: 'Git Command Helper', icon: '🔀', description: 'Find the right Git commands', color: '#f43f5e', file: 'tools/git-command-helper.html', category: 'security' },
 
       // Visual & CSS
       { id: 'svg-editor', name: 'SVG Editor', icon: '🎨', description: 'Create & edit SVG graphics', color: '#a78bfa', file: 'tools/svg-editor.html', category: 'visual' },
@@ -547,11 +611,11 @@
       { id: 'css-shadow-generator', name: 'CSS Shadow', icon: '💎', description: 'Create box shadows', color: '#BD93F9', file: 'tools/css-shadow-generator.html', category: 'visual' },
       { id: 'clippath-maker', name: 'Clip-path Maker', icon: '✂️', description: 'Create polygon clip-paths', color: '#89DDFF', file: 'tools/clippath-maker.html', category: 'visual' },
       { id: 'glassmorphism-generator', name: 'Glassmorphism', icon: '💎', description: 'Frosted glass effects', color: '#FFCB6B', file: 'tools/glassmorphism-generator.html', category: 'visual' },
-	  { id: 'image-metadata-viewer', name: 'Image Metadata Viewer', icon: '🖼️', description: 'Extract metadata from images', color: '#6366f1', file: 'tools/image-metadata-viewer.html', category: 'visual' },
+      { id: 'image-metadata-viewer', name: 'Image Metadata Viewer', icon: '🖼️', description: 'Extract metadata from images', color: '#6366f1', file: 'tools/image-metadata-viewer.html', category: 'visual' },
       { id: 'favicon-generator', name: 'Favicon Generator', icon: '📱', description: 'Create favicons', color: '#C77DFF', file: 'tools/favicon-generator.html', category: 'visual' },
       { id: 'color-converter', name: 'Color Converter', icon: '🎨', description: 'HEX, RGB, HSL converter', color: '#FF6B9D', file: 'tools/color-converter.html', category: 'visual' },
       { id: 'css-timing-visualizer', name: 'CSS Timing Visualizer', icon: '⏱️', description: 'Compare animation timing functions', color: '#f59e0b', file: 'tools/css-timing-visualizer.html', category: 'visual' },
-	  { id: 'css-grid-generator', name: 'CSS Grid Generator', icon: '📐', description: 'Visual grid layout builder', color: '#6366f1', file: 'tools/css-grid-generator.html', category: 'visual' },
+      { id: 'css-grid-generator', name: 'CSS Grid Generator', icon: '📐', description: 'Visual grid layout builder', color: '#6366f1', file: 'tools/css-grid-generator.html', category: 'visual' },
       { id: 'html-viewer', name: 'HTML Viewer', icon: '🌐', description: 'Preview your HTML code', color: '#89DDFF', file: 'tools/html-viewer.html', category: 'visual' },
 
       // Generators & Content
@@ -562,8 +626,8 @@
       { id: 'slug-generator', name: 'Slug Generator', icon: '🔗', description: 'Generate URL-safe slugs', color: '#8BE9FD', file: 'tools/slug-generator.html', category: 'generators' },
       { id: 'meta-tag-generator', name: 'Meta Tags', icon: '🏷️', description: 'Generate SEO meta tags', color: '#FF79C6', file: 'tools/meta-tag-generator.html', category: 'generators' },
       { id: 'robots-txt-generator', name: 'Robots.txt', icon: '🤖', description: 'Generate robots.txt', color: '#50FA7B', file: 'tools/robots-txt-generator.html', category: 'generators' },
-	  { id: 'bash-template-generator', name: 'Bash Script Generator', icon: '🐚', description: 'Shell boilerplate builder', color: '#84cc16', file: 'tools/bash-template-generator.html', category: 'generators' },
-      
+      { id: 'bash-template-generator', name: 'Bash Script Generator', icon: '🐚', description: 'Shell boilerplate builder', color: '#84cc16', file: 'tools/bash-template-generator.html', category: 'generators' },
+
       // Encoders & Transformers
       { id: 'base64', name: 'Base64', icon: '📄', description: 'Encode/decode Base64', color: '#4ECDC4', file: 'tools/base64.html', category: 'encoders' },
       { id: 'url-encoder', name: 'URL Encoder', icon: '🔗', description: 'Encode/decode URLs', color: '#8BE9FD', file: 'tools/url-encoder.html', category: 'encoders' },
@@ -598,8 +662,14 @@
     function loadTools(category = 'all') {
       const grid = document.getElementById('tools');
       const filtered = category === 'all' ? tools : tools.filter(t => t.category === category);
-      
-      grid.innerHTML = filtered.map(tool => `
+      const favorites = JSON.parse(localStorage.getItem('prism-favorites') || '[]');
+
+      grid.innerHTML = filtered.map(tool => {
+        const isFav = favorites.includes(tool.id);
+        const favBtnText = isFav ? 'Favorited' : 'Favorite';
+        const favBtnClass = isFav ? 'active-fav' : '';
+
+        return `
         <a href="${tool.file}" class="tool-card" style="--tool-color: ${tool.color};" onclick="addToRecent('${tool.id}')">
           <div class="tool-header-mini">
             <div class="tool-icon">${tool.icon}</div>
@@ -608,12 +678,68 @@
           <div class="tool-desc">${tool.description}</div>
           <div class="tool-actions">
             <button class="tool-action-btn" onclick="copyToolLink(event, '${tool.file}')">🔗 Link</button>
+            <button class="tool-action-btn ${favBtnClass}" onclick="addToFavorite(event, '${tool.id}')">⭐ ${favBtnText}</button>
+          </div>
+        </a>
+      `}).join('');
+
+      document.getElementById('tools-count').textContent = tools.length;
+      document.getElementById('category-title').textContent = categoryTitles[category];
+    }
+
+    function loadFavorites() {
+      const grid = document.getElementById('favorites');
+      const favoritesContainer = document.getElementById('favorites-container');
+      const favoritesIds = JSON.parse(localStorage.getItem('prism-favorites') || '[]');
+
+      if (favoritesIds.length === 0) {
+        favoritesContainer.hidden = true;
+        return;
+      }
+
+      favoritesContainer.hidden = false;
+
+      const favoriteTools = favoritesIds
+        .map(id => tools.find(t => t.id === id))
+        .filter(t => t !== undefined); // Filter out any potentially removed tools
+
+      grid.innerHTML = favoriteTools.map(tool => `
+        <a href="${tool.file}" class="tool-card" style="--tool-color: ${tool.color};" onclick="addToRecent('${tool.id}')">
+          <div class="tool-header-mini">
+            <div class="tool-icon">${tool.icon}</div>
+            <div class="tool-name">${tool.name}</div>
+          </div>
+          <div class="tool-desc">${tool.description}</div>
+          <div class="tool-actions">
+            <button class="tool-action-btn" onclick="copyToolLink(event, '${tool.file}')">🔗 Link</button>
+            <button class="tool-action-btn active-fav" onclick="addToFavorite(event, '${tool.id}')">⭐ Remove</button>
           </div>
         </a>
       `).join('');
-      
-      document.getElementById('tools-count').textContent = tools.length;
-      document.getElementById('category-title').textContent = categoryTitles[category];
+    }
+
+    function addToFavorite(event, toolId) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      let favorites = JSON.parse(localStorage.getItem('prism-favorites') || '[]');
+      const index = favorites.indexOf(toolId);
+
+      if (index > -1) {
+        // Remove
+        favorites.splice(index, 1);
+        showToast('Removed from favorites');
+      } else {
+        // Add
+        favorites.unshift(toolId);
+        showToast('Added to favorites!');
+      }
+
+      localStorage.setItem('prism-favorites', JSON.stringify(favorites));
+
+      // Update UI
+      loadFavorites();
+      loadTools(currentCategory); // Refresh main list to show/hide "Favorited" status
     }
 
     function copyToolLink(event, file) {
@@ -644,12 +770,12 @@
     function loadRecentTools() {
       const recent = JSON.parse(localStorage.getItem('prism-recent-tools') || '[]');
       const container = document.getElementById('recent-tools');
-      
+
       if (recent.length === 0) {
         container.innerHTML = '<p style="color: #71717a; font-size: 0.75rem; text-align: center;">No recent tools</p>';
         return;
       }
-      
+
       container.innerHTML = recent.map(id => {
         const tool = tools.find(t => t.id === id);
         if (!tool) return '';
@@ -676,15 +802,15 @@
     document.getElementById('tool-search').addEventListener('input', (e) => {
       const query = e.target.value.toLowerCase();
       const cards = document.querySelectorAll('.tool-card');
-      
+
       cards.forEach(card => {
-      const name = card.querySelector('.tool-name').textContent.toLowerCase();
-      const desc = card.querySelector('.tool-desc').textContent.toLowerCase();
-      card.style.display = (name.includes(query) || desc.includes(query)) ? 'flex' : 'none';
+        const name = card.querySelector('.tool-name').textContent.toLowerCase();
+        const desc = card.querySelector('.tool-desc').textContent.toLowerCase();
+        card.style.display = (name.includes(query) || desc.includes(query)) ? 'flex' : 'none';
       });
     });
-	
-	// Keyboard shortcut: / to focus search
+
+    // Keyboard shortcut: / to focus search
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
         e.preventDefault();
@@ -696,7 +822,7 @@
       let count = parseInt(localStorage.getItem('prism-usage-count') || '0');
       count++;
       localStorage.setItem('prism-usage-count', count);
-      
+
       if (count >= 5) {
         document.getElementById('usage-stats').style.display = 'flex';
         document.getElementById('usage-count').textContent = count;
@@ -709,9 +835,11 @@
 
     // Initialize
     loadTools();
+    loadFavorites();
     loadRecentTools();
     trackUsage();
-	
-</script>
+
+  </script>
 </body>
+
 </html>
